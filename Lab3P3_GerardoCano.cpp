@@ -62,17 +62,18 @@ void crear() {
     
     buscar(arr, num);
 }
+void triangulo(int iter) {
+
+}
 void pascal(int iter) {
     if (iter <= 50 && iter >= 1) {
-
+        triangulo(iter);
     }
     else {
         cout << "Numero de iteraciones no valido\n";
     }
 }
-void triangulo(int iter) {
 
-}
 
 void menu() {
     int opcion;
