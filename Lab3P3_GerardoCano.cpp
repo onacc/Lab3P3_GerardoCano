@@ -5,49 +5,79 @@
 
 using namespace std;
 int obtenerNumRandom() {
-    int random = -500 + rand() % 500;
+    //randomgenerador
+    int random = -500 + (rand() % 500);
     return random;
 }
-void crear() {
-    int num;
-    cout << "Ingrese numero a buscar";
-    cin >> num;
-    int arr[20];
-    llenaryorden(arr);
-    cout << "Longitud de arreglo: 20";
-    buscar(arr, num);
-
+void imprimirArray(int arr[]) {
+    for (int j = 0; j < 20; j++) {
+        cout << arr[j] << ",";
+    }
 }
 void buscar(int arr[], int numero) {
-    int contador;
-    for (int i = 0; i < sizeof arr; i++) {
-        if (arr[i] != numero) {
-            contador++;
+    int contador = 0;
+    int pos = 0;
+    cout << "\nArreglo generado y ordenado\n";
+    //ordenar
+    
+    //imprimir
+    imprimirArray(arr);
+    cout << endl;
+
+    for (int i = 0; i < 20; i++) {
+        if (arr[i] == numero) {
+            pos = i + 1;
+            contador = 1;
         }
-        if (sizeof arr == contador) {
-            contador == -1;
-        }
+        contador++;
     }
-    if (contador == -1) {
-        cout << "El numero" << numero << "NO se encuentra en el arreglo\nNumero de comparaciones"<<contador;
+    if (20 == contador) {
+        pos == -1;
+    }
+    
+    if (pos == -1) {
+        cout << "El numero " << numero << " NO se encuentra en el arreglo\nNumero de comparaciones " << pos;
     }
     else {
-        cout << "El numero" << numero << "SI se encuentra en el arreglo\nNumero de comparaciones" << contador;
+        cout << "El numero " << numero << " SI se encuentra en el arreglo\nNumero de comparaciones " << pos;
     }
-    
+
 }
-int* llenaryorden(int arr[]) {
-    
-    for (int i = 0; i < 20; i++){
+int* llenar(int arr[]) {
+    //llenar arreglo
+    for (int i = 0; i < 20; i++) {
         arr[i] = obtenerNumRandom();
     }
 
     return arr;
 }
+void crear() {
+    //base
+    int num;
+    cout << "\nLongitud de arreglo: 20 \n";
+    cout << "Ingrese numero a buscar ";
+    cin >> num;
+    int arr[20];
+    llenar(arr);
+    
+    buscar(arr, num);
+}
+void pascal(int iter) {
+    if (iter <= 50 && iter >= 1) {
+
+    }
+    else {
+        cout << "Numero de iteraciones no valido\n";
+    }
+}
+void triangulo(int iter) {
+
+}
+
 void menu() {
     int opcion;
     do {
-        int matriz[4] = { 5,6,1,3 };
+        
         cout << "\n1-Busqueda Binaria\n2-Triangulo Pascal\n0-salir\nSeleccione una opcion: ";
         cin >> opcion;
         switch (opcion) {
@@ -57,7 +87,10 @@ void menu() {
             
             break;
         case 2:
-            
+            int ier;
+            cout << "Ingrese numero de iteraciones\n";
+            cin >> ier;
+            pascal(ier);
             break;
         default:
             cout << "Saliendo";
