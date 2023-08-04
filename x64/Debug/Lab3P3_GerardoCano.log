@@ -1,0 +1,4 @@
+﻿  Lab3P3_GerardoCano.cpp
+C:\Users\gcano\Downloads\semana2\Lab3P3_GerardoCano\Lab3P3_GerardoCano.cpp(16,5): error C3861: 'llenaryorden': identifier not found
+C:\Users\gcano\Downloads\semana2\Lab3P3_GerardoCano\Lab3P3_GerardoCano.cpp(18,5): error C3861: 'buscar': identifier not found
+C:\Users\gcano\Downloads\semana2\Lab3P3_GerardoCano\Lab3P3_GerardoCano.cpp(28,22): warning C4553: '==': result of expression not used; did you intend '='?
