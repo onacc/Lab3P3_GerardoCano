@@ -41,14 +41,12 @@ void buscar(int arr[], int numero) {
     if (contador == 20) {
         pos = -1;
     }
-    
     if (pos == -1) {
         cout << "El numero " << numero << " NO se encuentra en el arreglo\nNumero de comparaciones " << pos;
     }
     else {
         cout << "El numero " << numero << " SI se encuentra en el arreglo\nNumero de comparaciones " << pos;
     }
-
 }
 //llenar random
 int* llenar(int arr[]) {
@@ -78,26 +76,24 @@ int coeff(int n, int k) {
 }
 //imrprimir arr2
 void imprimirArray2(const vector<int>& arr) {
-   
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
 }
-
-
-
 //triangulo
 void triangulo(int filas, int actual = 0) {
+    //como
     vector<int> filatri;
     if (actual == filas)
         return;
     for (int i = 0; i <= actual; ++i) {
-        filatri.push_back(coeff(actual, i));
+        //filatri.push_back(coeff(actual, i));
     }
     imprimirArray2(filatri);
     triangulo(filas, actual + 1);
 }
-
-
-
-
+//fin segundo
 //funcion menu
 void menu() {
     int opcion;
@@ -113,7 +109,7 @@ void menu() {
             cout << "Ingrese numero de iteraciones ";
             cin >> iter;
 
-            if (iter < 1  && iter > 50) {
+            if (iter < 1  || iter > 50) {
                 cout << "Numero de iteraciones no valido." << endl;   
             }
             triangulo(iter);
@@ -124,9 +120,7 @@ void menu() {
         //fin menu
     } while (opcion);
 }
-
-
 int main(){
     menu();
-}
+}//fin
 
